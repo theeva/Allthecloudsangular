@@ -1,0 +1,14 @@
+<div *ngIf="products">
+  <h2>Products List</h2>
+  <ul>
+    <li *ngFor="let product of products">
+      <p>Name : {{product.name}}</p>
+      <p>Price: {{product.markupPrice}}</p>
+      <p>Description : {{product.description}}</p>
+      <p *ngIf=" product.maximumQuantity>0; else hiddenItem "> Status: In Stock</p>
+    <ng-template #hiddenItem>
+      <p>Status: Out Of Stock</p>
+    </ng-template>
+</li>
+  </ul>
+</div>
